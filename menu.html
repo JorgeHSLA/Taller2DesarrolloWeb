@@ -50,26 +50,26 @@
 
     <!-- Agregar  -->
     <section>
-        <form class="center">
+        <form class="center", id="form">
             <fieldset>
             
                 <label for="txtNombre" class="titulo">Nombre</label>
-                <input type="text" placeholder="Nombre" name="nombree" id="txtNombre" />
+                <input type="text" placeholder="Nombre" name="nombree" id="txtNombre" required />
 
                 <label for="txtAtributo1" class="titulo">Atributo 1</label>
-                <input type="text" placeholder="Atributo1" name="atributo1" id="txtAtritibuto1" />
+                <input type="text" placeholder="Atributo1" name="atributo1" id="txtAtributo1" required/>
 
                 <label for="txtAtributo2" class="titulo">Atributo 2</label>
-                <input type="text" placeholder="Atributo2" name="atributo2" id="txtAtributo2" />
+                <input type="text" placeholder="Atributo2" name="atributo2" id="txtAtributo2"  required/>
 
                 <label for="txtAtributo3" class="titulo">Atributo 3</label>
-                <input type="text" placeholder="Atributo3" name="atributo3" id="txtAtributo3" />
+                <input type="text" placeholder="Atributo3" name="atributo3" id="txtAtributo3" required />
 
                 <label for="txtImage" class="titulo">Imagen</label>
-                <input type="text" placeholder="Imagen" name="image" id="txtImage" />
+                <input type="text" placeholder="Imagen" name="image" id="txtImage" required />
 
                 <label for="txtPrecio" class="titulo">Precio</label>
-                <input type="text" placeholder="Precio" name="precio" id="txtPrecio" />
+                <input type="number" placeholder="Precio" name="precio" id="txtPrecio" required />
 
                 
                 <button type="submit">Agregar</button>
@@ -83,4 +83,6 @@
     </footer>
 
 </body>
+
+<script src="js/script.js"></script>
 </html>
