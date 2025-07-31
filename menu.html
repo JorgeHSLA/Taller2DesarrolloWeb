@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/header.css" /> <!-- LINK A CSS del header-->
+    <link rel="stylesheet" href="../styles/tienda.css" /> <!-- LINK A CSS de la tienda -->
+    <link rel="stylesheet" href="../styles/agregar.css" /> <!-- LINK A la parte de agregar -->
+</head>
+<body>
+
+    <!-- Header  -->
+    <header>
+        <div id="firstHeader">
+            <h1>COMSILA</h1>
+            <img class="carrito" src="images/carritoDeCompras.png" alt="carrito">
+        </div>      
+
+        <div id="secondHeader">
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos praesentium quas distinctio aut debitis vitae adipisci ducimus nesciunt fugit ut eaque nostrum quod fuga modi harum recusandae quidem pariatur dolor a facere, similique quasi dignissimos atque. Necessitatibus accusantium vitae dolorum omnis animi provident, quibusdam corrupti at consequuntur, harum possimus sunt.</p>
+            <img class="logo" src="images/COMSILALOGO.png" alt="IMAGENCOMSILA">
+        </div>
+    </header>
+
+    <!-- Tienda  -->
+    <section>
+        <div id = "itemList">
+            <article class="item">
+                <h2 class="itemTitle">Lapiz Amarillo</h2>
+                <img class="itemImage" src="images/inventary/lapizAmarillo.png" alt="Item 1 Image">
+                <p>Price: $10.00</p>
+                <button>Add to Cart</button>
+            </article>
+            <article class="item">
+                <h2 class="itemTitle">Lapiz Amarillo</h2>
+                <img class="itemImage" src="images/inventary/lapizAmarillo.png" alt="Item 1 Image">
+                <p>Price: $99.00</p>
+                <button>Add to Cart</button>
+            </article>
+            <article class="item">
+                <h2 class="itemTitle">Lapiz Amarillo</h2>
+                <img class="itemImage" src="images/inventary/lapizAmarillo.png" alt="Item 1 Image">
+                <p>Price: $10.00</p>
+                <button>Add to Cart</button>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Agregar  -->
+    <section>
+        <form class="center">
+            <fieldset>
+            
+                <label for="txtNombre" class="titulo">Nombre</label>
+                <input type="text" placeholder="Nombre" name="nombree" id="txtNombre" />
+
+                <label for="txtAtributo1" class="titulo">Atributo 1</label>
+                <input type="text" placeholder="Atributo1" name="atributo1" id="txtAtritibuto1" />
+
+                <label for="txtAtributo2" class="titulo">Atributo 2</label>
+                <input type="text" placeholder="Atributo2" name="atributo2" id="txtAtributo2" />
+
+                <label for="txtAtributo3" class="titulo">Atributo 3</label>
+                <input type="text" placeholder="Atributo3" name="atributo3" id="txtAtributo3" />
+
+                <label for="txtImage" class="titulo">Imagen</label>
+                <input type="text" placeholder="Imagen" name="image" id="txtImage" />
+
+                <label for="txtPrecio" class="titulo">Precio</label>
+                <input type="text" placeholder="Precio" name="precio" id="txtPrecio" />
+
+                
+                <button type="submit">Agregar</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <!-- Footer  -->
+    <footer>
+
+    </footer>
+
+</body>
+</html>

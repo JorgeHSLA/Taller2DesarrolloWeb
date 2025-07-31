@@ -1,0 +1,38 @@
+.agregar{
+    background-color: black;
+    align-items: center;
+    padding: 50px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    padding: 30px;
+    margin-top: 45px;
+}
+
+
+
+.titulo {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+fieldset button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 30px;
+    border: none;
+    border-radius: 5px;
+
+}

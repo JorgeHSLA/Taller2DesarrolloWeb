@@ -1,0 +1,71 @@
+
+header {
+
+    background-color: #f8f9fa;
+    padding: 10px 60px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    align-items:center;
+}
+
+.carrito{
+    width:50px;
+    height: 50px;
+    right: 20px;
+    top: 10px;
+}
+
+.logo{
+    padding-left: 30px;
+    padding-right: 80px;
+    width: 200px;
+    height: 200px;
+
+
+}
+
+.description , .logo {
+    font-size: 16px;
+    color: #333;
+    flex:wraP;
+
+}
+
+.description {
+    font-size: 16px;
+    color: #333;
+    flex:wraP;
+    padding-left: 70px;
+    width: 60%;
+
+}
+
+
+#secondHeader  {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+} 
+
+#secondHeader,#firstHeader  {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+    justify-content: space-between;
+
+} 
+
+/* para quitar margenes generadas por defecto */
+html,
+body {
+  border: rgb(0, 0, 0) 0px solid;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Usar min-height en lugar de height, esto resuelve el error que desaparece (vh es viewport, el 100 siginifca 100 porciento) */
+}
