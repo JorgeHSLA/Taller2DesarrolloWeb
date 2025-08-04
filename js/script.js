@@ -2,7 +2,8 @@
 
 // Traer el contenedor del carrito y los botones de agregar
 const carritoItems = document.getElementById('carrito-items');
-const botonesAgregar = document.querySelectorAll('button');
+const botonesAgregar = document.querySelectorAll('.buttonAdd');
+const botonBorrar = document.querySelector('.buttonDelete');
 
 // Traer el formulario y los campos del formulario
 const form = document.querySelector("#form")
@@ -42,7 +43,7 @@ class Item {
                 <p>- ${this.atributo2}</p>
                 <p>- ${this.atributo3}</p>
 
-                <button>Agregar al carro</button>
+                <button class="buttonAdd">Agregar al carro</button>
             </article>
             `;
   }
@@ -131,6 +132,11 @@ botonesAgregar.forEach(boton => {
     });
 });
 
+botonBorrar.addEventListener('click', () => {
+    // Limpiar el carrito
+    carritoItems.innerHTML = '';
+    urlImages.length = 0; // Vaciar el array de imágenes
+});
 
 
 
