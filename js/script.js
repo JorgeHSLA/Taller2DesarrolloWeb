@@ -152,5 +152,5 @@ botonBorrar.addEventListener('click', () => {
 
 
 
-
+// se llama a la funcion para que los botones de agregar al carrito funcionen desde el inicio 
 conectarBotonesAlCarrito();
