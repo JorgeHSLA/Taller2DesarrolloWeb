@@ -14,7 +14,25 @@
     <header>
         <div id="firstHeader">
             <h1>COMSILA</h1>
-            <img class="carrito" src="images/carritoDeCompras.png" alt="carrito">
+            <div class="carrito-container">
+                <img class="carrito" src="images/carritoDeCompras.png" alt="carrito">
+                <div class="carrito-dropdown">
+                    <!-- Contenido del carrito -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carrito-items">
+                            <!-- Aquí se llenarán dinámicamente los productos -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>      
 
         <div id="secondHeader">
@@ -28,14 +46,20 @@
         <div id = "itemList">
             <article class="item">
                 <h2 class="itemTitle">Lapiz</h2>
-                <img class="itemImage" src="images/inventary/lapizAmarillo.png" alt="Item 1 Image">
+                <img class="itemImage" src="https://www.ambientum.com/wp-content/uploads/2019/09/lapiz.png" alt="Item 1 Image">
                 <p>Price: $3</p>
+                <p>- Amarillo</p>
+                <p>- 15 cm</p>
+                <p>- trazado negro</p>
                 <button>Agregar al carro</button>
             </article>
             <article class="item">
                 <h2 class="itemTitle">Lapiz</h2>
-                <img class="itemImage" src="images/inventary/lapizAmarillo.png" alt="Item 1 Image">
+                <img class="itemImage" src="https://static.wixstatic.com/media/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png/v1/fill/w_550,h_550,al_c,lg_1,q_85,enc_avif,quality_auto/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png" alt="Item 1 Image">
                 <p>Price: $3</p>
+                <p>- Rojo</p>
+                <p>- 15 cm</p>
+                <p>- trazado rojo</p>
                 <button>Agregar al carro</button>
             </article>
             

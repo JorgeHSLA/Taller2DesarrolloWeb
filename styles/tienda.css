@@ -31,3 +31,8 @@
 .itemTitle {
     margin: 0px ;
 }
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
