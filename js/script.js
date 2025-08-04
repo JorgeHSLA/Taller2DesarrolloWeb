@@ -42,7 +42,6 @@ class Item {
                 <p>- ${this.atributo1}</p>
                 <p>- ${this.atributo2}</p>
                 <p>- ${this.atributo3}</p>
-
                 <button class="buttonAdd">Agregar al carro</button>
             </article>
             `;
@@ -59,15 +58,16 @@ const items = [
 
 
 //funcion para agregar los items al html
-const listaEnHtml= () => {
+const listaEnHtml = () => {
+  
     // Limpiar la lista de items en el HTML antes de agregar los nuevos
-    itemsList.innerHTML = ""
-    
-    for (let item of items){
-        itemsList.innerHTML += item.passHtml()
-    }
+    itemsList.innerHTML = "";
 
-}
+    for (let item of items) {
+        itemsList.innerHTML += item.passHtml();
+    }
+    conectarBotonesAlCarrito(); // aquí es donde se vuelven a enlazar los botones nuevos para agregar al carrito los items y el nuevo item agregado
+};
 
 
 form.addEventListener("submit", (e) => {
@@ -106,39 +106,41 @@ form.addEventListener("submit", (e) => {
 
 const urlImages = []
 
-botonesAgregar.forEach(boton => {
-    boton.addEventListener('click', (e) => {
-        const item = e.target.closest('.item'); //encontrar el ancestro más cercano que coincida con un selector CSS dado.
-        const imagenCarrito = item.querySelector('.itemImage').src; // Traer la imagen del item
-        if (urlImages.includes(imagenCarrito)) {
-            // Buscar la fila en el carrito que tenga esa imagen
-            const filas = carritoItems.querySelectorAll('tr');
-            filas.forEach(fila => {
-                const img = fila.querySelector('img');
-                if (img !== null && img.src === imagenCarrito) {
-                    // Encontramos la fila e item correcta , ahora aumentamos la cantidad
-                    const cantiItem = fila.querySelector('.cantiItem');
-                    let cantidadActual = parseInt(cantiItem.textContent);
-                    cantiItem.textContent = cantidadActual + 1;
-                }
-            });
-        } else {
-          const nombre = item.querySelector('.itemTitle').innerText;
-          // funciona solo porque el precio es el primer p, ya que trae el primero que encuentre, preguntar si es la mejor practica al profe siu
-          const precio = item.querySelector('p').innerText.split(':')[1].trim(); 
-          const fila = document.createElement('tr');
-          fila.innerHTML = `
-              <td> <img class="imageCarro" src="${imagenCarrito}" alt="IMAGEN${nombre}"> </td>
-              <td>${nombre}</td>
-              <td>${precio}</td>
-              <td class="cantiItem">1</td>
-          `;
-          urlImages.push(imagenCarrito); // Agregar la imagen al array 
-          carritoItems.appendChild(fila);
-        }
-        
+// tuve errores aqui porque cuando se agregaba un item al inventario se desniculaban los botones de agregar al carrito
+// Por eso es necesario volver a conectar los botones al carrito cada vez que se actualiza la lista de items
+const conectarBotonesAlCarrito = () => {
+    const botonesAgregar = document.querySelectorAll('.buttonAdd');
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const item = e.target.closest('.item');
+            const imagenCarrito = item.querySelector('.itemImage').src;
+
+            if (urlImages.includes(imagenCarrito)) {
+                const filas = carritoItems.querySelectorAll('tr');
+                filas.forEach(fila => {
+                    const img = fila.querySelector('img');
+                    if (img !== null && img.src === imagenCarrito) {
+                        const cantiItem = fila.querySelector('.cantiItem');
+                        let cantidadActual = parseInt(cantiItem.textContent);
+                        cantiItem.textContent = cantidadActual + 1;
+                    }
+                });
+            } else {
+                const nombre = item.querySelector('.itemTitle').innerText;
+                const precio = item.querySelector('p').innerText.split(':')[1].trim();
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td><img class="imageCarro" src="${imagenCarrito}" alt="IMAGEN${nombre}"></td>
+                    <td>${nombre}</td>
+                    <td>${precio}</td>
+                    <td class="cantiItem">1</td>
+                `;
+                urlImages.push(imagenCarrito);
+                carritoItems.appendChild(fila);
+            }
+        });
     });
-});
+};
 
 botonBorrar.addEventListener('click', () => {
     // Limpiar el carrito
@@ -151,3 +153,4 @@ botonBorrar.addEventListener('click', () => {
 
 
 
+conectarBotonesAlCarrito();
