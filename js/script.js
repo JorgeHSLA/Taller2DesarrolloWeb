@@ -53,8 +53,8 @@ class Item {
 
 // Items que ya estan
 const items = [
-    new Item("lapiz","amarillo","15 cm", "trazado negro" ,"https://www.ambientum.com/wp-content/uploads/2019/09/lapiz.png", 3),
-    new Item("lapiz","rojo","15 cm", "trazado rojo  " ,"https://static.wixstatic.com/media/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png/v1/fill/w_550,h_550,al_c,lg_1,q_85,enc_avif,quality_auto/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png", 3)
+    new Item("lapiz","amarillo","15 cm", "trazado negro" ,"https://www.ambientum.com/wp-content/uploads/2019/09/lapiz.png", 2000),
+    new Item("lapiz","rojo","15 cm", "trazado rojo  " ,"https://static.wixstatic.com/media/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png/v1/fill/w_550,h_550,al_c,lg_1,q_85,enc_avif,quality_auto/45ce85_9c38bbf5abde45d591794cb14ab7e7fb~mv2.png", 2000)
 ]
 
 
@@ -73,6 +73,13 @@ const listaEnHtml= () => {
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const precioValor = parseFloat(precio.value);
+
+    if (precioValor < 1000) {
+        alert("El precio debe ser mayor o igual a 1000"); // muiestra un mensaje de alerta
+        return; // Detiene la ejecución aquí, no agrega ni limpia nada
+    }
+
     // Crear un nuevo item con los datos del formulario
     const nuevoItem = new Item(
         nombreForm.value,
@@ -80,7 +87,7 @@ form.addEventListener("submit", (e) => {
         atributo2.value,
         atributo3.value,
         imagen.value,
-        precio.value
+        precioValor
     );
 
     // Agregar el nuevo item a la lista de items
@@ -91,7 +98,8 @@ form.addEventListener("submit", (e) => {
 
     // Actualizar la lista de items en el HTML
     listaEnHtml();
-})
+});
+
 
 
 //////////////////////////////////////////Loguica del carrito////////////////////////////////////
